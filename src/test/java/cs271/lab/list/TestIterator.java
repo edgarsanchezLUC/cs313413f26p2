@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.LinkedList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,9 @@ public class TestIterator {
   public void setUp() throws Exception {
     list = new ArrayList<Integer>();
     // TODO Question: Also try with a LinkedList - does it make any difference?
+  }
+  public void linkedSetUp() throws Exception {
+    list = new LinkedList<Integer>();
   }
 
   @AfterEach
@@ -76,18 +80,17 @@ public class TestIterator {
     while (i.hasNext()) {
       if (i.next() == 77) {
         i.remove(); // TODO Question: What happens if you use list.remove(Integer.valueOf(77))?
+        // list.remove(Integer.valueOf(77)) would only remove the first 77 and leave the rest
       }
     }
     // TODO using assertEquals and List.of, express which values are left in the list
     // See TestList.java for examples of how to use List.of; also see the Java List
     // interface for more information
     assertEquals(33,List.of(list));
-    assertEquals(77,List.of(list));
     assertEquals(44,List.of(list));
-    assertEquals(77,List.of(list));
     assertEquals(55,List.of(list));
-    assertEquals(77,List.of(list));
     assertEquals(66,List.of(list));
+    assertEquals(77,List.of(list));
   }
 
   @Test
