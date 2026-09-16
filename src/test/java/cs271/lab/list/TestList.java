@@ -44,8 +44,8 @@ public class TestList {
     // TODO fix the expected values in the assertions below
     list.add(77);
     assertEquals(true, list.isEmpty());
-    assertEquals(0, list.size());
-    assertEquals(0, list.get(0).intValue());
+    assertEquals(1, list.size());
+    assertEquals(77, list.get(0).intValue());
   }
 
   @Test
@@ -53,7 +53,8 @@ public class TestList {
     // TODO write assertions using
     // list.contains(77)
     // that hold before and after adding 77 to the list
-    fail("Not yet implemented"); // remove this line when done
+    list.add(77);
+    assertTrue(list.contains(77));
   }
 
   @Test
@@ -61,11 +62,11 @@ public class TestList {
     list.add(77);
     list.add(77);
     list.add(77);
-    // TODO fix the expected values in the assertions below
-    assertEquals(0, list.size());
+    // TODO fix the expected values in the assertions below - fixed
+    assertEquals(3, list.size());
     assertEquals(0, list.indexOf(77));
-    assertEquals(0, list.get(1).intValue());
-    assertEquals(0, list.lastIndexOf(77));
+    assertEquals(77, list.get(1).intValue());
+    assertEquals(2, list.lastIndexOf(77));
   }
 
   @Test
@@ -78,11 +79,11 @@ public class TestList {
     list.add(77);
     list.add(66);
     // TODO fix the expected values in the assertions below
-    assertEquals(0, list.size());
-    assertEquals(0, list.indexOf(77));
-    assertEquals(0, list.lastIndexOf(77));
-    assertEquals(0, list.get(2).intValue());
-    assertEquals(0, list.get(3).intValue());
+    assertEquals(7, list.size());
+    assertEquals(1, list.indexOf(77));
+    assertEquals(5, list.lastIndexOf(77));
+    assertEquals(44, list.get(2).intValue());
+    assertEquals(77, list.get(3).intValue());
     assertEquals(List.of(33, 77, 44), list);
   }
 
@@ -96,18 +97,20 @@ public class TestList {
     list.add(77);
     list.add(6);
     list.remove(5); // TODO Question: What does this method do?
-    // TODO fix the expected values in the assertions below
-    assertEquals(0, list.size());
-    assertEquals(0, list.indexOf(77));
-    assertEquals(0, list.lastIndexOf(77));
-    assertEquals(0, list.get(2).intValue());
-    assertEquals(0, list.get(3).intValue());
+    // TODO Answer: list.remove(5) will remove the value at index 5 which is 77
+    // TODO fix the expected values in the assertions below - fixed
+    assertEquals(6, list.size());
+    assertEquals(1, list.indexOf(77));
+    assertEquals(3, list.lastIndexOf(77));
+    assertEquals(4, list.get(2).intValue());
+    assertEquals(77, list.get(3).intValue());
     list.remove(Integer.valueOf(5)); // TODO Question: What does this one do?
-    assertEquals(0, list.size());
-    assertEquals(0, list.indexOf(77));
-    assertEquals(0, list.lastIndexOf(77));
-    assertEquals(0, list.get(2).intValue());
-    assertEquals(0, list.get(3).intValue());
+    //TODO Answer: this removes the first value of 5
+    assertEquals(5, list.size());
+    assertEquals(1, list.indexOf(77));
+    assertEquals(3, list.lastIndexOf(77));
+    assertEquals(4, list.get(2).intValue());
+    assertEquals(77, list.get(3).intValue());
   }
 
   @Test
