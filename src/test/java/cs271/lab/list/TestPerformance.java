@@ -7,7 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class TestPerformance {
+public class  TestPerformance {
 
   // TODO run test and record running times for SIZE = 10, 100, 1000, 10000, ...
   // (choose in conjunction with REPS below up to an upper limit where the clock
@@ -20,7 +20,8 @@ public class TestPerformance {
 
   // TODO choose this value in such a way that you can observe an actual effect
   // for increasing problem sizes
-  private final int REPS = 1000000;
+  // originally 1000000
+  private final int REPS = 10;
 
   private List<Integer> arrayList;
 

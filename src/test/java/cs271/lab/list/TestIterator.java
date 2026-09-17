@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.LinkedList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -47,19 +48,19 @@ public class TestIterator {
     final var i = list.iterator();
     assertTrue(i.hasNext());
     assertEquals(33, i.next().intValue());
-    // TODO fix the expected values in the assertions below
+    // TODO fix the expected values in the assertions below - fixed
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(77, i.next().intValue());
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(44, i.next().intValue());
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(77, i.next().intValue());
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(55, i.next().intValue());
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(77, i.next().intValue());
     assertTrue(i.hasNext());
-    assertEquals(0, i.next().intValue());
+    assertEquals(66, i.next().intValue());
     assertFalse(i.hasNext());
   }
 
@@ -76,12 +77,14 @@ public class TestIterator {
     while (i.hasNext()) {
       if (i.next() == 77) {
         i.remove(); // TODO Question: What happens if you use list.remove(Integer.valueOf(77))?
+        // list.remove(Integer.valueOf(77)) would only remove the first 77 and leave the rest
+        // list.remove wouldn't work as it is in an i Iterator as well
       }
     }
-    // TODO using assertEquals and List.of, express which values are left in the list
+    // TODO using assertEquals and List.of, express which values are left in the list - fixed
     // See TestList.java for examples of how to use List.of; also see the Java List
     // interface for more information
-    fail("Not yet implemented"); // remove this line when done
+    assertEquals(List.of(33,44,55,66), list);
   }
 
   @Test
@@ -95,7 +98,7 @@ public class TestIterator {
     list.add(66);
     double sum = 0;
     int n = 0;
-    // TODO use an iterator and a while loop to compute the average (mean) of the values
+    // TODO use an iterator and a while loop to compute the average (mean) of the values - fixed
     Iterator<Integer> i = list.iterator();
     while (i.hasNext()) {
       sum += i.next();
