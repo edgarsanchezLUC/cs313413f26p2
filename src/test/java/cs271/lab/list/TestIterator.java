@@ -48,7 +48,7 @@ public class TestIterator {
     final var i = list.iterator();
     assertTrue(i.hasNext());
     assertEquals(33, i.next().intValue());
-    // TODO fix the expected values in the assertions below
+    // TODO fix the expected values in the assertions below - fixed
     assertTrue(i.hasNext());
     assertEquals(77, i.next().intValue());
     assertTrue(i.hasNext());
@@ -78,16 +78,13 @@ public class TestIterator {
       if (i.next() == 77) {
         i.remove(); // TODO Question: What happens if you use list.remove(Integer.valueOf(77))?
         // list.remove(Integer.valueOf(77)) would only remove the first 77 and leave the rest
+        // list.remove wouldn't work as it is in an i Iterator as well
       }
     }
     // TODO using assertEquals and List.of, express which values are left in the list
     // See TestList.java for examples of how to use List.of; also see the Java List
     // interface for more information
-    assertEquals(33,List.of(list));
-    assertEquals(44,List.of(list));
-    assertEquals(55,List.of(list));
-    assertEquals(66,List.of(list));
-    assertEquals(77,List.of(list));
+    assertEquals(List.of(33,44,55,66), list);
   }
 
   @Test
