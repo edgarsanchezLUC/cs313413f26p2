@@ -81,7 +81,7 @@ public class TestIterator {
         // list.remove wouldn't work as it is in an i Iterator as well
       }
     }
-    // TODO using assertEquals and List.of, express which values are left in the list
+    // TODO using assertEquals and List.of, express which values are left in the list - fixed
     // See TestList.java for examples of how to use List.of; also see the Java List
     // interface for more information
     assertEquals(List.of(33,44,55,66), list);
@@ -98,7 +98,7 @@ public class TestIterator {
     list.add(66);
     double sum = 0;
     int n = 0;
-    // TODO use an iterator and a while loop to compute the average (mean) of the values
+    // TODO use an iterator and a while loop to compute the average (mean) of the values - fixed
     Iterator<Integer> i = list.iterator();
     while (i.hasNext()) {
       sum += i.next();

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class TestPerformance {
+public class  TestPerformance {
 
   // TODO run test and record running times for SIZE = 10, 100, 1000, 10000, ...
   // (choose in conjunction with REPS below up to an upper limit where the clock
